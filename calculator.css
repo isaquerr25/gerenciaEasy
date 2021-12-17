@@ -1,0 +1,242 @@
+:root { 
+    --darl-blue: #363f5f;
+    --green: #49AA26;
+    --lighter-green: #44ff00;
+    --light-green: #3dd705;
+    --red: #e92929;
+
+    --black-gray:#242529;
+    --brown:#94915e;
+    --ice:#efeeea;
+    --black-blue:#040509;
+    --border-gray: #757677;
+}
+
+*{
+    background-color: var(--black-blue);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+html {
+    font-size: 93.75%; 
+
+}
+
+body {
+    background-color: var(--black-blue);
+    font-family: 'Calibri',sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    flex: 1;
+}
+
+header {
+
+    text-align: center;
+
+}
+
+.state_graphic {
+    margin-top: 1.5rem;
+    border: 1rem solid var(--black-gray);
+    border-radius: 0.5rem;
+    color: var(--border-gray);
+    background: var(--black-gray);
+    width: 22rem;
+    height: 20rem;
+}
+.state_graphic *{
+    background: var(--black-gray)
+}
+.myChart {
+    
+    background: #44ff00;
+}
+.states_moth {
+    display:flex;
+    flex-direction: row;
+    
+}
+.states_moth *{
+    background: var(--black-gray);
+}
+
+.states_moth div {
+    display: flex;
+    flex-direction:column;
+    margin: 0.5rem;
+
+    border: 1rem solid var(--black-gray);
+    border-radius: 0.5rem;
+    background: var(--black-gray);
+    color: var(--border-gray);
+    align-items: flex-start;
+    width: 10.5rem;
+}
+
+.states_moth div img {
+    width: 25px;
+    height: 25px;
+}
+
+.price_saving {
+    
+    font-size: 20px;
+    color: var(--brown);
+    font-weight: 800;
+    
+}
+.price_expenses {
+    
+    font-size: 20px;
+    color: var(--ice);
+    font-weight: 800;
+}
+
+form {
+    display:flex;
+    flex-direction:column
+
+}
+form * {
+    margin-top: 0.5rem;
+}
+
+.dropbtn {
+
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black-blue);
+    border: 0.3rem solid var(--border-gray);
+    opacity: 50%;
+    border-radius:1rem;
+    color: white;
+    width: 22rem;
+    height: 3rem;
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+
+form input{
+    background-color: var(--black-blue);
+    border: 0.3rem solid var(--border-gray);
+    opacity: 50%;
+    border-radius:1rem;
+    width: 10.5rem;
+    height: 3rem;
+    font-size: 15px;
+    font-weight: 500;
+    padding-left:10px;
+    color: var(--ice);
+}
+
+
+
+
+
+
+
+
+.menu{
+    position: absolute;
+    top: 89%;  
+    left: 7%; 
+}
+.controll_position{
+    border: 10px solid var(--border-gray);
+    border-radius: 1.2rem;
+    background: var(--border-gray);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 20rem;
+    height:4rem;
+}
+.controll_position div{
+    margin:0.1rem;
+}
+.list_item{
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: center;
+    font-size: 14px;
+    background: var(--border-gray)   
+}
+
+.list_item img{
+    background-color: var(--border-gray);
+    width:30px; 
+    height:30px;
+}
+
+.list_item span:not(.plusss){
+    background-color: var(--border-gray);
+    
+}
+.list_item.color{
+    color: var(--ice);
+    
+}
+.list_item.color.up{
+    
+    position: relative;
+}
+
+
+.plusss{
+    
+    font-size: 75px;
+    position: absolute;
+    
+    top:-100%;
+    left: -20%;
+    color: var(--ice);
+    border-radius: 2.5rem;
+    width: 4.5rem;
+    height:4.5rem;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background-color: var(--brown);
+    border:0
+}

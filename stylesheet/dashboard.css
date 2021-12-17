@@ -1,0 +1,239 @@
+:root { 
+    --darl-blue: #363f5f;
+    --green: #49AA26;
+    --lighter-green: #44ff00;
+    --light-green: #3dd705;
+    --red: #e92929;
+
+    --black-gray:#242529;
+    --brown:#94915e;
+    --ice:#efeeea;
+    --black-blue:#040509;
+    --border-gray: #757677;
+}
+*{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Calibri;
+    background: var(--black-blue);
+    color: var(--ice)
+}
+
+h3 {
+    font-size: 30px;
+    margin-top: 0.2rem;
+    margin-left: 1.5rem;
+}
+html {
+    font-size: 93.75%; 
+
+}
+
+.screem_login {
+    margin:1rem;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.screem_login img {
+    width: 3rem;
+}
+
+.find_value{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.find_value input{
+    
+    background-color: var(--black-blue);
+    border: 0.2rem solid var(--border-gray);
+    opacity: 50%;
+    border-radius:1rem;
+    width: 90vw;
+    height: 3rem;
+    font-size: 15px;
+    font-weight: 500;
+    padding-left:10px;
+    color: var(--ice);
+    padding-left: 3.5rem;
+    font-size: 20px;
+    font-weight: 800;
+}
+.lamp {
+    position:absolute;
+    left: 8%;
+    top: 8%;
+    width: 35px;
+    height: 35px;
+}
+
+/*  balance */
+
+.balance_show *{
+    background: var(--border-gray);
+    color: var(--ice)
+    
+}
+.balance_show {
+    background: var(--border-gray);
+    margin-top: 1rem;
+    margin-left: 1.4rem;
+    border: 1rem solid var(--border-gray);
+    border-radius: 2rem;
+    width: 89vw;
+    position: relative;
+    
+}
+.balance_show span{
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.balance_more{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    background: var(--border-gray);
+    padding: 1rem;
+    position: absolute;
+    left: 17vw;
+    top: 1vh;
+    line-height: 20px;
+    box-sizing: border-box;
+    margin-left: 50vw;
+    margin-top: -1rem;
+    font-size: 35px;
+    height: 1rem;
+    border-radius: 1rem;
+    border: 0rem;
+}
+
+#balance{
+    margin-top: 1rem;
+    font-size: 30px;
+    font-weight: 800;
+    padding-bottom: 1rem;
+}
+
+
+/* Topic */
+.utils-like {
+   
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1rem;
+
+}
+
+.utils-like button {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--border-gray);
+    height: 4.8rem;
+    width : 4.8rem;
+    margin: 0.5rem;
+    border-radius: 1.5rem;
+    border: 0rem;
+    
+}
+.utils-like button *{
+    background: transparent;
+    
+}
+.top-icon {
+    width:  40px;
+    height: 40px;
+    background: transparent;
+}
+
+
+/* table scroll */
+.new-table *
+{
+    background-color: transparent;
+} 
+.new-table {
+
+    display: flex;
+    flex-direction:column;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--black-gray);
+    margin-top: 1rem;
+    border: 1rem solid var(--black-gray);
+    border-radius: 2rem;
+    position: relative;
+
+}
+
+
+.bt-scroll {
+    border-radius: 2rem;
+    background: var(--border-gray);
+    height: 0.4rem;
+    width: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+}
+
+
+/* ---------------------------rows------------ */
+.info-rows{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 3.2rem;
+    width: 90vw;
+}
+.manager {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.info-rows ion-icon{
+    width:  38px;
+    height: 38px;
+    padding-right: 0.5rem;
+} 
+.info-rows div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.info-rows div span:first-child{
+    
+    margin-right: 1 auto;
+}
+.info-rows div:last-child{
+    
+    margin-left: auto;
+}
+.value-day{
+    margin-right: auto;
+    opacity: 0.5;
+}
+.value-type{
+    margin-left: auto;
+    opacity: 0.5;
+}
+.value-type{
+    margin-left: auto;
+    opacity: 0.5;
+}
+.saving{
+    color: var(--brown);
+    font-weight: 800;
+    font-size: 17px;
+}

@@ -1,0 +1,133 @@
+:root { 
+    --darl-blue: #363f5f;
+    --green: #49AA26;
+    --lighter-green: #44ff00;
+    --light-green: #3dd705;
+    --red: #e92929;
+
+    --black-gray:#242529;
+    --brown:#94915e;
+    --ice:#efeeea;
+    --black-blue:#0c0d11;
+    --border-gray: #757677;
+}
+
+*{
+    background-color: var(--black-gray);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 93.75%; 
+
+}
+
+body {
+    background-color: var(--black-gray);
+    font-family: 'Calibri',sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--black-gray);
+    align-items: center;
+}
+
+header {
+
+    
+    text-align: center;
+
+}
+header img {
+
+    width: 200px;
+    height: 220px;
+    margin-top: 5rem;
+}
+/*  tela de login ============================= */
+
+/*  body ====================== */
+.box-login {
+    
+    align-items: center;
+    position: relative;
+    background: #d3d3d3;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-height: 100vh;
+    min-width: 100vw;
+}
+
+input {
+    padding: 0.5rem;
+    height: 2.5rem;
+    margin: 1rem;
+
+    border: 0;
+    width: 75%;
+    border: 2px solid var(--border-gray);
+    border-radius: 13px ;
+    
+
+    background-color: var(--black-gray);
+    color: var(--border-gray);
+    
+    font-size:17px;
+    font-family: Calibri;
+    font-weight: 800;
+}
+
+.sub-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    flex: 1;
+    width: 100%;
+    
+}
+
+.button-google{
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--brown);
+    height: 2rem;
+    border: 0;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 0.5rem;
+    height: 2.5rem;
+    margin: 1rem;
+
+    border: 0;
+    width: 75%;
+    border-radius: 13px ;
+    color: var(--ice);
+    font-size:18px;
+    font-family: Calibri;
+    font-weight: 800;
+}
+.register {
+    color: var(--brown);
+    font-size:24px;
+    font-family: Calibri;
+    font-weight: 800;
+}
+.button-google:hover {
+    background: var(--brown);
+}
+.button-google:active {
+    background: var(--black-blue);
+
+}
+
+
+
+
+
+

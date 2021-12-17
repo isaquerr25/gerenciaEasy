@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./graphic.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <title>graphic</title>
+</head>
+<body>
+    <ul class="carrossel">
+        <li>Virtual Credit Card<br></li>
+        <li>Virtual Credit Card<br></li>
+        <li>Virtual Credit Card<br></li>
+        <li>Virtual Credit Card<br></li>
+        <li>Virtual Credit Card<br></li>
+    </ul>
+
+    <div class="state_graphic">
+        <p>Total</p>
+        <br>
+        <h2>$14,340.80</h2>
+        <div id="curve_chart"></div>
+    </div>
+    <div class= "states_moth">
+        <div>
+            <img src="./assets/up_price.png">
+            <br>
+            <span>Saving</span>
+            <span class="price_saving">$2,512.40</span>
+        </div>
+        <div>
+            <img src="./assets/down_price.png">
+            <br>
+            <span>Expenses</span>
+            <span class="price_expenses" >$2,512.40</span>
+        </div>
+    </div>
+    
+
+    <div class="menu">
+        <div class="controll_position">
+            <div class="list_item color">
+                <img src="./assets/house.png">
+                <span>Dashboard</span>
+            </div>
+            <div class="list_item color">
+                <img src="./assets/calculator.png">
+                <span>Calculator</span>
+            </div>
+            <div class="list_item color up">
+                <span class="asv">
+                    <button form="forms" type="submit" class="plusss">+</button>
+                </span>
+                
+            </div>
+            <div class="list_item color">
+                <img src="./assets/graphic.png">
+                <span>Grafic</span>
+            </div>
+            <div class="list_item color">
+                <img src="./assets/profile_white.png">
+                <span>Profile</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+  
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            [('string', 'x'), 'Sales'],
+            ['2004', 1000 ],
+            ['2005', 1170],
+            ['2006', 660],
+            ['2007', 1030],      
+          ]);
+          data.addColumn('number', 'X');
+          var options = {
+            legend: 'none',
+            backgroundColor:'transparent',
+            curveType: 'function',
+            legend:'none',
+            
+            width: 400,
+            height: 280,
+            vAxis: {
+                maxValue: 10
+            },
+
+
+            annotations: {
+                annotations: {
+                    style: 'line'
+                },
+                textStyle: {
+                  fontName: 'Times-Roman',
+                  fontSize: 18,
+                  bold: true,
+                  italic: true,
+                  // The color of the text.
+                  color: '#3dd705',
+                  // The color of the text outline.
+                  auraColor: '#3dd705',
+                  // The transparency of the text.
+                  opacity: 0.8
+                }
+              },
+              
+
+          };
+  
+          var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+  
+          chart.draw(data, options);
+        }
+      </script>
+</html>

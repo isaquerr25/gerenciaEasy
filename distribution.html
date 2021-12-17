@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./distribution.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <title>graphic</title>
+</head>
+<body>
+    <form action="ados">
+        <div>
+            <input type="date"  name="Start" form="forms"  id="Start" placeholder="Start Date">
+            <input type="date"  name="Final" form="forms"  id="Final" placeholder="Final Date.">
+        </div>
+    </form>
+
+    <canvas  id="myChart" ></canvas >
+    <button type="submit" class="center">+</button>
+    
+    
+
+    
+
+    <div class="menu">
+        
+        <div class="controll_position">
+            <div class="list_item color">
+                <img src="./assets/house.png">
+                <span>Dashboard</span>
+            </div>
+            <div class="list_item color">
+                <img src="./assets/calculator.png">
+                <span>Calculator</span>
+            </div>
+            <div class="list_item color up">
+                <span class="asv">
+                    <button form="forms" type="submit" class="plusss">+</button>
+                </span>
+                
+            </div>
+            <div class="list_item color">
+                <img src="./assets/graphic.png">
+                <span>Grafic</span>
+            </div>
+            <div class="list_item color">
+                <img src="./assets/profile_white.png">
+                <span>Profile</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        Chart.defaults.font.size = 15;
+        Chart.defaults.font.size = 15;
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'polarArea',
+            data: {
+                labels: ['casa', 'restaurante', 'viagem', 'conserto', 'salão', 'doação'],
+                datasets: [{
+                    data: [500,2000, 20, 1500, 700, 50],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)',
+                        'rgba(54, 162, 235,0.5)',
+                        'rgba(255, 206, 86, 0.5)',
+                        'rgba(75, 192, 192, 0.5)',
+                        'rgba(153, 102, 255, 0.5)',
+                        'rgba(255, 159, 64, 0.5)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+
+                scales: {
+                    r: {
+                        grid: {
+                            color: 'rgb(46,46,47,0.5)'
+                          },
+                        ticks: {
+                             drawBorder: false,
+                            color: 'white',
+                            fontSize:'5',
+                            backdropColor: '#040509',
+                        }
+                        
+                    }
+                  },
+
+                
+
+                responsive: true,
+                color:'white',
+
+                
+            },            
+        });
+    </script>
+</html>
