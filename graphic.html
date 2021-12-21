@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./graphic.css">
+    <link rel="stylesheet" href="./stylesheet/menu.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
     
@@ -42,26 +43,29 @@
     
 
     <div class="menu">
+        
         <div class="controll_position">
-            <div class="list_item color">
+            <div class="list_item color" onclick="opentabe('dashboard')">
                 <img src="./assets/house.png">
                 <span>Dashboard</span>
             </div>
-            <div class="list_item color">
+            <div class="list_item color" onclick="opentabe('calculator')">
                 <img src="./assets/calculator.png">
                 <span>Calculator</span>
             </div>
-            <div class="list_item color up">
-                <span class="asv">
-                    <button form="forms" type="submit" class="plusss">+</button>
+            <div class="list_item color up" onclick="createPrice()">
+                <span class="asv" >
+                    <button form="forms"  type="submit" class="plusss">
+                        <ion-icon name="add-circle-sharp"></ion-icon>
+                    </button>
                 </span>
                 
             </div>
-            <div class="list_item color">
+            <div class="list_item color" onclick="opentabe('graphic')">
                 <img src="./assets/graphic.png">
-                <span>Grafic</span>
+                <span>Graphic</span>
             </div>
-            <div class="list_item color">
+            <div class="list_item color" onclick="opentabe('profile')">
                 <img src="./assets/profile_white.png">
                 <span>Profile</span>
             </div>
@@ -121,5 +125,17 @@
   
           chart.draw(data, options);
         }
-      </script>
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    
+    
+    <script src="./js/dashboard.js"></script>
+    <script src="./js/menu.js"></script>
+    <link rel="stylesheet" href="./stylesheet/popup.css">
 </html>

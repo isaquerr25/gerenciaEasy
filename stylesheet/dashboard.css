@@ -26,6 +26,7 @@ h3 {
     margin-top: 0.2rem;
     margin-left: 1.5rem;
 }
+
 html {
     font-size: 93.75%; 
 
@@ -197,6 +198,20 @@ html {
     height: 3.2rem;
     width: 90vw;
 }
+.info-rows div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.info-rows div:first-child{
+    margin-right: auto;
+}
+.info-rows div:last-child{
+    margin-left: auto;
+}
+.info-rows div:last-child *{
+    
+}
 .manager {
     display: flex;
     align-items: center;
@@ -207,33 +222,4 @@ html {
     height: 38px;
     padding-right: 0.5rem;
 } 
-.info-rows div{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-.info-rows div span:first-child{
-    
-    margin-right: 1 auto;
-}
-.info-rows div:last-child{
-    
-    margin-left: auto;
-}
-.value-day{
-    margin-right: auto;
-    opacity: 0.5;
-}
-.value-type{
-    margin-left: auto;
-    opacity: 0.5;
-}
-.value-type{
-    margin-left: auto;
-    opacity: 0.5;
-}
-.saving{
-    color: var(--brown);
-    font-weight: 800;
-    font-size: 17px;
-}
+
