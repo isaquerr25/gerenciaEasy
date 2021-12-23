@@ -7,7 +7,7 @@
     background: var(--border-gray);
 }
 .swal2-popup *{
-    background: var(--border-gray);
+    background: transparent;
 }
 .just{
     width:  100%;
@@ -112,6 +112,25 @@
     font-size: 20px;
     font-weight: 800;
     color: var(--red);
+}
+.ref-grids{
+    background-color: var(--black-blue);
+    border: 0.2rem solid var(--border-gray);
+    opacity: 50%;
+    border-radius:1rem;
+    width: vw;
+    height: 3rem;
+    font-size: 15px;
+    font-weight: 500;
+    padding-left:10px;
+    color: var(--ice);
+    padding-left: 3.5rem;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--red);
+
+    width: 100%;
+    padding-left: 1rem;
 }
 
 .help {

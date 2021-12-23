@@ -68,6 +68,7 @@ header {
     width: 22rem;
     position: relative;
     padding-bottom: 14rem;
+    margin: 0 auto;
 }
 
 #curve_chart{
@@ -75,7 +76,9 @@ header {
     position: absolute;
     left:-12%;
     right: 0%;
-    top:10%
+    top:10%;
+    display: inline-block;
+    margin: 0 auto !important;
 }
 .states_moth {
     display:flex;
@@ -118,8 +121,6 @@ header {
     font-weight: 800;
 }
 
-
-
 path{
     filter: drop-shadow(1px 2px 5px  rgb(243, 240, 240));
     color: rgb(243, 240, 240);
@@ -130,69 +131,4 @@ g rect {
     opacity: 1;
     fill: var(--border-gray);
     opacity: 0.3;
-}
-
-
-.menu{
-    position: absolute;
-    top: 89%;  
-    left: 7%; 
-}
-.controll_position{
-    border: 10px solid var(--border-gray);
-    border-radius: 1.2rem;
-    background: var(--border-gray);
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    width: 20rem;
-    height:4rem;
-}
-.controll_position div{
-    margin:0.1rem;
-}
-.list_item{
-    display: flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content: center;
-    font-size: 14px;
-    background: var(--border-gray)   
-}
-
-.list_item img{
-    background-color: var(--border-gray);
-    width:30px; 
-    height:30px;
-}
-
-.list_item span:not(.plusss){
-    background-color: var(--border-gray);
-    
-}
-.list_item.color{
-    color: var(--ice);
-    
-}
-.list_item.color.up{
-    
-    position: relative;
-}
-
-
-.plusss{
-    
-    font-size: 75px;
-    position: absolute;
-    
-    top:-100%;
-    left: -20%;
-    color: var(--ice);
-    border-radius: 2.5rem;
-    width: 4.5rem;
-    height:4.5rem;
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    background-color: var(--brown);
-    border:0
 }

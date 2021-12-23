@@ -20,25 +20,44 @@
     background: var(--black-blue);
     color: var(--ice)
 }
-
+html {
+    font-size: 93.75%; 
+    scroll-snap-type: y mandatory;
+    overflow-x: hidden;
+    overflow-y: hidden; 
+    scrollbar-width: none;
+}
+html.scroll{
+    user-select: none;
+    overflow-y: scroll;
+} 
+html::-webkit-scrollbar {
+    display: none;
+    -webkit-appearance: none;
+}
+body {
+    
+    
+}
 h3 {
     font-size: 30px;
     margin-top: 0.2rem;
     margin-left: 1.5rem;
 }
 
-html {
-    font-size: 93.75%; 
 
-}
 
 .screem_login {
     margin:1rem;
     display: flex;
     flex-direction: row;
-
+    
 }
 
+.standard {
+    scroll-snap-align: start end;
+    
+}
 .screem_login img {
     width: 3rem;
 }
@@ -175,7 +194,7 @@ html {
     border: 1rem solid var(--black-gray);
     border-radius: 2rem;
     position: relative;
-
+    scroll-snap-align: start end;
 }
 
 
@@ -202,20 +221,31 @@ html {
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-top: 1rem;
 }
 .info-rows div:first-child{
+    margin-right: auto;
+}
+.info-rows div:first-child *{
+    color: var(--green);
     margin-right: auto;
 }
 .info-rows div:last-child{
     margin-left: auto;
 }
-.info-rows div:last-child *{
-    
+.info-rows  div:last-child span{
+    margin-left: auto;
+
+}
+.info-rows  div:nth-child(2) span{
+    margin-right: auto;
+
 }
 .manager {
     display: flex;
     align-items: center;
     flex-direction: column;
+    overflow: scroll;
 }
 .info-rows ion-icon{
     width:  38px;
@@ -223,3 +253,7 @@ html {
     padding-right: 0.5rem;
 } 
 
+.saving{
+    color: var(--brown);
+    
+}

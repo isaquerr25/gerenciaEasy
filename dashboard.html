@@ -4,48 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./stylesheet/dashboard.css">
     <link rel="stylesheet" href="./stylesheet/menu.css">
+    <link rel="stylesheet" href="./stylesheet/menu.css">
+    <link rel="stylesheet" href="./stylesheet/popup.css">
+    <link rel="stylesheet" href="./stylesheet/dashboard.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
     
     <title>graphic</title>
 </head>
 <body>
-    <div class="screem_login">
-        <img src="./assets/profile_brow.png" alt="">
-        <span>
-            <h2>Hello, Isaque</h2>
-            <p>Welcome the Gerencia Easy</p>
-        </span>
-        
+    <div class="standard" >
+        <div class="screem_login">
+            <img src="./assets/profile_brow.png" alt="">
+            <span>
+                <h2>Hello, Isaque</h2>
+                <p>Welcome the Gerencia Easy</p>
+            </span>
+            
+        </div>
+        <div class="find_value" >
+            <ion-icon class='lamp' name="search-outline"></ion-icon>
+            <input type="text" href="" placeholder="Search">
+        </div>
+        <div class="balance_show">
+            <span>Your Balance</span>
+            <button class="balance_more">...</button>
+            <div id="balance">$50,000.00</div>
+            
+        </div>
+        <h3>Topic</h3>
+        <div class= "utils-like">
+            <button id='go-distribution' onclick="opentabe('distribution')">
+                <ion-icon class="top-icon" name="disc-outline"></ion-icon>
+                <span>Distribuiton</span>
+            </button>
+            <button>
+                <ion-icon class="top-icon" name="cloud-download-outline"></ion-icon>
+                <span>Download</span>
+            </button>
+            <button>
+                <ion-icon class="top-icon" name="share-social-outline"></ion-icon>
+                <span>Share Profile</span>
+            </button>
+        </div>
     </div>
-    <div class="find_value" >
-        <ion-icon class='lamp' name="search-outline"></ion-icon>
-        <input type="text" href="" placeholder="Search">
-    </div>
-    <div class="balance_show">
-        <span>Your Balance</span>
-        <button class="balance_more">...</button>
-        <div id="balance">$50,000.00</div>
-        
-    </div>
-    <h3>Topic</h3>
-    <div class= "utils-like">
-        <button id='go-distribution' onclick="opentabe('distribution')">
-            <ion-icon class="top-icon" name="disc-outline"></ion-icon>
-            <span>Distribuiton</span>
-        </button>
-        <button>
-            <ion-icon class="top-icon" name="cloud-download-outline"></ion-icon>
-            <span>Download</span>
-        </button>
-        <button>
-            <ion-icon class="top-icon" name="share-social-outline"></ion-icon>
-            <span>Share Profile</span>
-        </button>
-    </div>
-
     <div class="new-table">
         <div class="bt-scroll"></div>
         <div class="manager">
@@ -89,44 +92,41 @@
     <div class="menu">
         
         <div class="controll_position">
-            <div class="list_item color" onclick="opentabe('dashboard')">
-                <img src="./assets/house.png">
+            <div class="list_item color dashboard" onclick="opentabe('dashboard')">
+                <ion-icon class="correct-ico-menu" name="home"></ion-icon>
                 <span>Dashboard</span>
             </div>
-            <div class="list_item color" onclick="opentabe('calculator')">
-                <img src="./assets/calculator.png">
+            <div class="list_item color calculator" onclick="opentabe('calculator')">
+                <ion-icon class="correct-ico-menu" name="calculator"></ion-icon>
                 <span>Calculator</span>
             </div>
             <div class="list_item color up" onclick="createPrice()">
                 <span class="asv" >
-                    <button form="forms"  type="submit" class="plusss">
+                    <button class="plusss">
                         <ion-icon name="add-circle-sharp"></ion-icon>
                     </button>
                 </span>
                 
             </div>
-            <div class="list_item color" onclick="opentabe('graphic')">
-                <img src="./assets/graphic.png">
+            <div class="list_item color graphic" onclick="opentabe('graphic')">
+                <ion-icon class="correct-ico-menu" name="analytics"></ion-icon>
                 <span>Graphic</span>
             </div>
-            <div class="list_item color" onclick="opentabe('profile')">
-                <img src="./assets/profile_white.png">
+            <div class="list_item color profile_white" onclick="opentabe('profile')">
+                <ion-icon class="correct-ico-menu" name="person"></ion-icon>
                 <span>Profile</span>
             </div>
         </div>
     </div>
-</body>
+
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="sweetalert2.all.min.js"></script>
-<script src="sweetalert2.min.js"></script>
-<link rel="stylesheet" href="sweetalert2.min.css">
+<script type="module"  src="./js/registerDb.js"></script>
+<script type="module" src="./js/dashboard.js"></script>
+<script type="module" src="./js/menu.js"></script>
 
-
-<script src="./js/dashboard.js"></script>
-<script src="./js/menu.js"></script>
-<link rel="stylesheet" href="./stylesheet/popup.css">
+</body>
 </html>

@@ -1,10 +1,36 @@
+import  { pathIP , userID} from './registerDb.js';
 function opentabe(linkend){ 
     window.open(`${linkend}.html`,'_self');
 }
+window.opentabe = opentabe;
 
+console.log(window.location.pathname);
+console.log(userID);
 
+if (window.location.pathname == '/dashboard.html'){
+    let element = document.querySelector('.dashboard');
+    element.classList.add("brown");
+}    
+else if(window.location.pathname == '/calculator.html'){
+    let element = document.querySelector('.calculator');
+    element.classList.add("brown");
+}    
+else if(window.location.pathname == '/graphic.html'){
+    let element = document.querySelector('.graphic');
+    element.classList.add("brown");
+}   
+else if(window.location.pathname == '/profile.html'){
+    let element = document.querySelector('.profile');
+    element.classList.add("brown");
+}     
 async function createPrice(){
-    console.log("asda");
+    let getDb = await getOnlyGrids();
+    let listOptions = "";
+    for (var i = 0; i < getDb.length; i++) {
+        
+        listOptions += `<option value="${getDb[i].name}">${getDb[i].name}</option>`
+        
+    }
     const { value: formValues } = await Swal.fire({
         title: 'Enter New Transaction',
         html:
@@ -13,13 +39,10 @@ async function createPrice(){
                     <span class='work-distrib'">
                         <div class="dro-pwn">
                             <select name="dist-ref" id="dist-ref" class="dist-ref">
-                                <option value='All'>All</option>
-                                <option value='House'>House</option>
-                                <option value='Job'>Jobsssssssssss</option>
-                                <option value='Car'>Car</option>
+                                ${listOptions}
                             </select>
                         </div>
-                        <button class='distribu-btn'"><ion-icon name="add-circle-sharp"></ion-icon></button>
+                        <button class='distribu-btn' onclick="opentabe('/distribution')"><ion-icon name="add-circle-sharp" ></ion-icon></button>
                     </span>
                     <div class="input-group">
                         <input 
@@ -62,22 +85,62 @@ async function createPrice(){
         }
       })
     if (formValues) {
-        send_transition()
-        Swal.fire(JSON.stringify(formValues))
+        send_transition(formValues)
+        // Swal.fire(JSON.stringify(formValues))
 
     }
+    
+}
+window.createPrice = createPrice;
+
+
+
+async function getOnlyGrids() {
+    const fetchResponsePromise = await fetch(`${pathIP}/users/${userID}/gridvalues`, {
+
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+    })
+    let val_serv = await fetchResponsePromise.json()
+    console.log(val_serv)
+    return (val_serv)
+
 }
 
 
-async function send_transition(){
-    let send = {email:front_emai.value,password:front_senha.value}
-        const fetchResponsePromise = await fetch('http://localhost:80/auth' ,{ 
-            
-            method:'POST',
-            headers: {'Content-Type':'application/json'},
-            body: JSON.stringify(send)
-            
-        })
-        let val_serv = await fetchResponsePromise.json()
-        console.log(val_serv.value)
+async function send_transition(front){
+    let send = {
+                name: front[1],
+                gridnames: front[0],
+                price: front[2],
+                date_inform: front[3]
+                }
+    console.log(send)
+    const fetchResponsePromise = await fetch(`${pathIP}/users/${userID}/gridvalues/${front[0]}/managergridsapp` ,{ 
+
+        method:'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(send)
+
+    })
+    let val_serv = await fetchResponsePromise.json()
+    console.log(val_serv)
+    if(!val_serv.error){
+        Swal.fire({
+
+            icon: 'success',
+            title: 'Your work has been saved',
+            showConfirmButton: false,
+
+          })
+    }
+    else{
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+            showConfirmButton: false,
+          })
+    }
 }
+window.send_transition = send_transition;

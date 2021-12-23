@@ -1,19 +1,74 @@
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheet/circular.css">
+    <link rel="stylesheet" href="./stylesheet/menu.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
     
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="./circular.js" ></script>
-    <link rel="stylesheet" href="./circular.css">
-  </head>
-  <body>
-    <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
-      <linearGradient id="MyGradient" x1="0" x2="0" y1="0" y2="1">
-        <stop offset="20%" stop-color="#94915e"/>
-        <stop offset="100%" stop-color="transparent"/>
-      </linearGradient>
-    </svg>
-    <div id="chart_div" style="width: 100%; height: 500px;"></div>
-  
-  </body>
-  
+    <title>graphic</title>
+</head>
+<body>
+    <form action="ados">
+        <div>
+            <input type="date"  name="Start" form="forms"  id="Start" placeholder="Start Date"  onchange="updateGraph()" >
+            <input type="date"  name="Final" form="forms"  id="Final" placeholder="Final Date." onchange="updateGraph()">
+        </div>
+    </form>
+
+    <canvas  id="myChart" ></canvas >
+    <div class="row-btn">
+        <button type="submit" class="center-btn brow" onclick="createGrid()">+</button>
+        <button class="center-btn red"  onclick="deleteGrid()">
+            DELETE
+        </button>
+    </div>
+    
+    
+
+    
+
+    <div class="menu">
+        
+        <div class="controll_position">
+            <div class="list_item color dashboard" onclick="opentabe('dashboard')">
+                <ion-icon class="correct-ico-menu" name="home"></ion-icon>
+                <span>Dashboard</span>
+            </div>
+            <div class="list_item color calculator" onclick="opentabe('calculator')">
+                <ion-icon class="correct-ico-menu" name="calculator"></ion-icon>
+                <span>Calculator</span>
+            </div>
+            <div class="list_item color up" onclick="createPrice()">
+                <span class="asv" >
+                    <button class="plusss">
+                        <ion-icon name="add-circle-sharp"></ion-icon>
+                    </button>
+                </span>
+                
+            </div>
+            <div class="list_item color graphic" onclick="opentabe('graphic')">
+                <ion-icon class="correct-ico-menu" name="analytics"></ion-icon>
+                <span>Graphic</span>
+            </div>
+            <div class="list_item color profile_white" onclick="opentabe('profile')">
+                <ion-icon class="correct-ico-menu" name="person"></ion-icon>
+                <span>Profile</span>
+            </div>
+        </div>
+    </div>
+</body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script type="module"  src="./js/menu.js"></script>
+    <script type="module"  src="./js/registerDb.js"></script>
+    <script type="module"  src="./js/circular.js"></script>
+    <link rel="stylesheet" href="./stylesheet/popup.css">
+
 </html>

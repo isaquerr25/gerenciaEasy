@@ -1,0 +1,132 @@
+:root { 
+    --darl-blue: #363f5f;
+    --green: #49AA26;
+    --lighter-green: #44ff00;
+    --light-green: #3dd705;
+    --red: #e92929;
+
+    --black-gray:#242529;
+    --brown:#94915e;
+    --ice:#efeeea;
+    --black-blue:#040509;
+    --border-gray: #757677;
+}
+
+*{
+    background-color: var(--black-blue);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+html {
+    font-size: 93.75%; 
+
+}
+
+body {
+    background-color: var(--black-blue);
+    font-family: 'Calibri',sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    flex: 1;
+}
+
+header {
+
+    text-align: center;
+
+}
+
+#myChart{
+    margin-top: 1rem;
+    background-color: var(--black-blue);
+    width:10rem;
+    height: 10rem;
+    color: var(--ice);
+    border-radius: 2rem;
+}
+#show_indice {
+    margin-top: 1rem;
+    background-color: var(--black-gray);
+    width:20rem;
+    height: 10rem;  
+    border-radius: 2rem;
+    
+}
+#show_indice *{
+    color: var(--ice);
+}
+.row-btn{
+    display: flex;
+    width: 85%;
+}
+.center-btn{
+
+    color: var(--border-gray);
+    font-size: 20px;
+    width: 4.5rem;
+    height:4.5rem;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background-color: var(--black-blue);
+    
+    border: 0.3rem solid var(--black-gray);
+    border-radius: 2rem;
+    width: 50% ;
+    height:2.5rem;
+    margin-top: 1rem;
+}
+.red {
+    border-color: #e92929;
+    color: #e92929;
+}
+.red:active {
+    background: var(--ice);
+    border-color: #e92929;
+    color: #e92929;
+}
+.brow {
+    border-color: var(--brown);
+    color: var(--brown);
+    font-size: 40px;
+}
+.brow:active {
+    border-color: var(--brown);
+    background: var(--ice);
+    color: var(--brown);
+}
+
+
+
+form {
+    display:flex;
+    flex-direction:column
+
+}
+form * {
+    margin-top: 0.5rem;
+}
+
+form input{
+    border: 0.3rem solid var(--border-gray);
+    opacity: 50%;
+    border-radius:5rem;
+    width: 10.5rem;
+    height: 3rem;
+    font-size: 15px;
+    font-weight: 500;
+    padding-left:10px;
+    color: var(--ice);
+    opacity: 1;
+}
+
+
+
+
+

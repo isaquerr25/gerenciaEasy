@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./calculator.css">
+    <link rel="stylesheet" href="./stylesheet/calculator.css">
     <link rel="stylesheet" href="./stylesheet/menu.css">
+    <link rel="stylesheet" href="./stylesheet/popup.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
     
@@ -42,28 +43,28 @@
     <div class="menu">
         
         <div class="controll_position">
-            <div class="list_item color" onclick="opentabe('dashboard')">
-                <img src="./assets/house.png">
+            <div class="list_item color dashboard" onclick="opentabe('dashboard')">
+                <ion-icon class="correct-ico-menu" name="home"></ion-icon>
                 <span>Dashboard</span>
             </div>
-            <div class="list_item color" onclick="opentabe('calculator')">
-                <img src="./assets/calculator.png">
+            <div class="list_item color calculator" onclick="opentabe('calculator')">
+                <ion-icon class="correct-ico-menu" name="calculator"></ion-icon>
                 <span>Calculator</span>
             </div>
             <div class="list_item color up" onclick="createPrice()">
                 <span class="asv" >
-                    <button form="forms"  type="submit" class="plusss">
+                    <button class="plusss">
                         <ion-icon name="add-circle-sharp"></ion-icon>
                     </button>
                 </span>
                 
             </div>
-            <div class="list_item color" onclick="opentabe('graphic')">
-                <img src="./assets/graphic.png">
+            <div class="list_item color graphic" onclick="opentabe('graphic')">
+                <ion-icon class="correct-ico-menu" name="analytics"></ion-icon>
                 <span>Graphic</span>
             </div>
-            <div class="list_item color" onclick="opentabe('profile')">
-                <img src="./assets/profile_white.png">
+            <div class="list_item color profile_white" onclick="opentabe('profile')">
+                <ion-icon class="correct-ico-menu" name="person"></ion-icon>
                 <span>Profile</span>
             </div>
         </div>
@@ -77,9 +78,9 @@
     <script src="sweetalert2.min.js"></script>
     <link rel="stylesheet" href="sweetalert2.min.css">
 
-    <script src="./js/calculator.js"></script>
-    <script src="./js/menu.js"></script>
-    <link rel="stylesheet" href="./stylesheet/popup.css">
+    <script type="module" src="./js/calculator.js"></script>
+    <script type="module" src="./js/menu.js"></script>
+
     
 </body>
 

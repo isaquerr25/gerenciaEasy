@@ -1,9 +1,27 @@
 
+:root { 
+    --darl-blue: #363f5f;
+    --green: #49AA26;
+    --lighter-green: #44ff00;
+    --light-green: #3dd705;
+    --red: #e92929;
+
+    --black-gray:#242529;
+    --brown:#94915e;
+    --ice:#efeeea;
+    --black-blue:#040509;
+    --border-gray: #757677;
+}
+body{
+    min-height: 100vh !important;
+}
 .menu{
-    position: absolute;
+    position: sticky;
     bottom: 10vw;  
-    left: 7%;
     background: transparent;
+    display: flex;
+    align-items:center;
+    justify-content: center;
 }
 .controll_position{
     opacity: 0.95;
@@ -71,4 +89,14 @@
     border-radius: 2.5rem;
     background-color: var(--brown);
     filter:   drop-shadow(0px 12px 10px #000);
+}
+.correct-ico-menu {
+    background-color: transparent;
+    width: 2rem;
+    height:2rem;
+}
+.brown * {
+    background-color: transparent;
+    color: var(--brown);
+    fill: var(--brown)
 }
