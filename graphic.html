@@ -13,19 +13,24 @@
     <title>graphic</title>
 </head>
 <body>
-    <ul class="carrossel">
+    <!-- <ul class="carrossel">
         <li>Virtual Credit Card<br></li>
         <li>Virtual Credit Card<br></li>
         <li>Virtual Credit Card<br></li>
         <li>Virtual Credit Card<br></li>
         <li>Virtual Credit Card<br></li>
-    </ul>
+    </ul> -->
 
     <div class="state_graphic">
         <p>Total</p>
-        <br>
-        <h2>$14,340.80</h2>
-        <div id="curve_chart"></div>
+        <h2 id="big-total">$14,340.80</h2>
+        <span>
+            <button id="day">Day</button>
+            <button id="week">Week</button>
+            <button id="month">Month</button>
+            <button id="year">Year</button>
+        </span>
+        <canvas  id="myChart" height="200"></canvas >
     </div>
     <div class= "states_moth">
         <div>
@@ -42,6 +47,11 @@
         </div>
     </div>
     
+    <br>
+    <br>
+    <br>
+    <br>
+  
 
     <div class="menu">
         
@@ -74,13 +84,13 @@
     </div>
 
 </body>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="./stylesheet/popup.css">
-    <script type="module" src="./js/graphic.js"></script>
-    <script type="module" src="./js/menu.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="stylesheet" href="./stylesheet/popup.css">
+<script type="module" src="./js/pathServer.js"></script>
+<script type="module" src="./js/graphic.js"></script>
+<script type="module" src="./js/menu.js"></script>
     
 </html>

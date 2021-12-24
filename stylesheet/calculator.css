@@ -14,8 +14,7 @@
 
 *{
     background-color: var(--black-blue);
-    margin: 0;
-    padding: 0;
+
     box-sizing: border-box;
     
 }
@@ -33,7 +32,7 @@ body {
     align-items: center;
     justify-content: center;
     justify-items: center;
-    flex: 1;
+
 }
 
 header {
@@ -43,7 +42,7 @@ header {
 }
 
 .state_graphic {
-    margin-top: 1.5rem;
+    margin-top: 0rem;
     border: 1rem solid var(--black-gray);
     border-radius: 0.5rem;
     color: var(--border-gray);

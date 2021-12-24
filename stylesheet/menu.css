@@ -12,9 +12,7 @@
     --black-blue:#040509;
     --border-gray: #757677;
 }
-body{
-    min-height: 100vh !important;
-}
+
 .menu{
     position: sticky;
     bottom: 10vw;  

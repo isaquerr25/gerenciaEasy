@@ -13,11 +13,8 @@
 }
 
 *{
-    
-    margin: 0;
-    padding: 0;
+    margin: 0rem;
     box-sizing: border-box;
-    
 }
 
 html {
@@ -31,9 +28,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     justify-items: center;
     flex: 1;
+    height: 100vh;
 }
 
 header {
@@ -60,15 +57,46 @@ header {
 }
 
 .state_graphic {
-    margin-top: 1.5rem;
+    
+    margin: 0 auto;
     border: 1rem solid var(--black-gray);
     border-radius: 0.5rem;
     color: var(--border-gray);
     background: var(--black-gray);
     width: 22rem;
     position: relative;
-    padding-bottom: 14rem;
-    margin: 0 auto;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+.state_graphic p:first-child{
+    margin-top: 1rem;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.state_graphic h2{
+    margin-top: 1rem;
+    font-size: 30px;
+    color: var(--ice);
+    
+}
+.state_graphic span button{
+    margin: 0rem;
+    margin-top: 1rem;
+    color: var(--ice);
+    background:  transparent;
+    border: 0.3rem solid transparent;
+    border-radius: 2rem;
+    opacity: 0.75;
+    font-size: 13px;
+}
+.state_graphic span button:focus{
+    background:  var(--border-gray);
+    border: 0.4rem solid var(--border-gray);
+    font-size: 14px;
+    opacity: 1;
 }
 
 #curve_chart{

@@ -15,17 +15,16 @@
 <body>
     <ion-icon class="dran" name="chevron-down-outline"></ion-icon>
     <div class="state_graphic">
-        <p>Total Spending</p>
-        <br>
-        <h2>$14,340.80</h2>
+        <p>Total</p>
+        <h2 id="bigValue">$14,340.80</h2>
         <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
     </div>
     <form action="" class="forms">
         <div class="dropdown">
             <select name="link-data" id="myDropdown" class="dropbtn">
-                <option value='Day'>Day</option>
-                <option value='Moth'>Moth</option>
-                <option value='Year'>Year</option>
+                <option value='day'>Day</option>
+                <option value='moth'>Moth</option>
+                <option value='year'>Year</option>
             </select>
         </div>
         <div>
@@ -34,12 +33,15 @@
         </div>
         <div>
             <input type="number"  name="initial_value" form="forms"  id="initial_value" placeholder="Initial Value">
-            <button type="submit" value="Submit" form="forms">Calculator</button>
+            <input type="number"  name="time-value" form="forms"  id="time-value" placeholder="Time">
         </div>
     </form>
 
     
-
+    <br>
+    <br>
+    <br>
+    <br>
     <div class="menu">
         
         <div class="controll_position">
@@ -70,13 +72,10 @@
         </div>
     </div>
     
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="sweetalert2.all.min.js"></script>
-    <script src="sweetalert2.min.js"></script>
-    <link rel="stylesheet" href="sweetalert2.min.css">
 
     <script type="module" src="./js/calculator.js"></script>
     <script type="module" src="./js/menu.js"></script>
