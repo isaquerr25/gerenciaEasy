@@ -3,7 +3,8 @@ const Manager = require('../models/ManagerValues');
 const { Op } = require('sequelize')
 module.exports = {
     async index(req, res) {
-        const { user_id, grid_id } = req.params;
+        const { grid_id } = req.params;
+        const { userId: user_id } = req;
 
         const grids = await Grids.findByPk(grid_id, {
             include: { association: 'manager_values' }
@@ -13,7 +14,8 @@ module.exports = {
     },
 
     async store(req, res) {
-        const { user_id, grid_id } = req.params;
+        const { grid_id } = req.params;
+        const { userId: user_id } = req;
         const { name, price, date_inform, create_at } = req.body;
 
         const _grids = await Grids.findByPk(grid_id);
@@ -33,7 +35,8 @@ module.exports = {
     },
 
     async dell(req, res) {
-        const { user_id, grid_id } = req.params;
+        const { grid_id } = req.params;
+        const { userId: user_id } = req;
         const { id_delet } = req.body;
         console.log(id_delet)
         const _grids = await Grids.findByPk(grid_id);
@@ -55,7 +58,8 @@ module.exports = {
 
     },
     async createTrasitionByName(req, res) {
-        const { userpras, namepras } = req.params;
+        const { namepras } = req.params;
+        const { userId: userpras } = req;
         console.log(req.body)
         const { name, grid, price, date_inform, create_at } = req.body;
 
@@ -89,7 +93,7 @@ module.exports = {
     async findByUser(req, res) {
         
         console.log('aaaa')
-        const { userpras } = req.params;
+        const { userId: userpras } = req;
         const { start ,finish } = req.body;
 
         let startDate = new Date(start)

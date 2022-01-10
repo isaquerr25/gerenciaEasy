@@ -1,4 +1,5 @@
 import * as register from './registerDb.js'
+import getAuthToken from './getAuthToken.js'
 console.log(register.pathIP)
 
 let myChart
@@ -105,10 +106,12 @@ async function updateGraph() {
 window.updateGraph = updateGraph;
 async function getGridDB() {
 
-    const fetchResponsePromise = await fetch(`${register.pathIP}/users/${register.userID}/gridvalues/${front[0]}/managergridsapp`, {
-
+    const fetchResponsePromise = await fetch(`${register.pathIP}/gridvalues/${front[0]}/managergridsapp`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 
+            'Content-Type': 'application/json',
+            'Authorization': getAuthToken()
+        }
     })
     let val_serv = await fetchResponsePromise.json()
     console.log(val_serv)
@@ -178,10 +181,13 @@ async function createGridDB(front) {
         create_at: new Date()
     }
     console.log(send)
-    const fetchResponsePromise = await fetch(`${register.pathIP}/users/${register.userID}/gridvalues`, {
+    const fetchResponsePromise = await fetch(`${register.pathIP}/gridvalues`, {
 
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': getAuthToken()
+        },
         body: JSON.stringify(send)
 
     })
@@ -250,10 +256,12 @@ async function deleteGrid() {
 window.deleteGrid = deleteGrid;
 
 async function getOnlyGrids() {
-    const fetchResponsePromise = await fetch(`${register.pathIP}/users/${register.userID}/gridvalues`, {
+    const fetchResponsePromise = await fetch(`${register.pathIP}/gridvalues`, {
 
         method: 'GET',
-        headers: { 'Content-Type': 'application/json' }
+        headers: {
+            'Authorization': getAuthToken()
+        },
     })
     let val_serv = await fetchResponsePromise.json()
     console.log(val_serv)
@@ -268,10 +276,12 @@ async function delestroyOnlyGridsDb(front) {
 
     }
     console.log(send)
-    const fetchResponsePromise = await fetch(`${register.pathIP}/users/${register.userID}/gridvaluesdell`, {
-
+    const fetchResponsePromise = await fetch(`${register.pathIP}/gridvaluesdell`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': getAuthToken()
+        },
         body: JSON.stringify(send)
 
     })
@@ -300,10 +310,12 @@ async function delestroyOnlyGridsDb(front) {
 
 async function getGridsAndValuesDb() {
     let send = { start: document.getElementById('Start').value, finish: document.getElementById('Final').value }
-    const fetchResponsePromise = await fetch(`${register.pathIP}/users/${register.userID}/managergridfindByUser`, {
-
+    const fetchResponsePromise = await fetch(`${register.pathIP}/managergridfindByUser`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': getAuthToken()
+        },
         body: JSON.stringify(send)
     })
     let val_serv = await fetchResponsePromise.json()

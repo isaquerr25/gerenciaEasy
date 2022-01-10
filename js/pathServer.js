@@ -1,4 +1,5 @@
 import * as regs from './registerDb.js'
+import getAuthToken from './getAuthToken.js'
 
 
 

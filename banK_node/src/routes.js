@@ -1,4 +1,5 @@
 const express = require('express');
+const verifyToken = require('./controllers/tokenController');
 const UserController = require('./controllers/UserControllers');
 const AddressController = require('./controllers/AddressController');
 const TechController = require('./controllers/TechController');
@@ -15,25 +16,24 @@ routes.get('/users', UserController.index);
 routes.post('/create', UserController.store);
 routes.post('/auth', UserController.login);
 
-routes.get('/users/:user_id/addresses', AddressController.index);
-routes.post('/users/:user_id/addresses', AddressController.store);
+routes.get('/addresses', verifyToken, AddressController.index);
+routes.post('/addresses', verifyToken, AddressController.store);
 
-routes.get('/users/:user_id/techs', TechController.index);
-routes.post('/users/:user_id/techs', TechController.store);
-routes.delete('/users/:user_id/techs', TechController.delete);
+routes.get('/techs', verifyToken, TechController.index);
+routes.post('/techs', verifyToken, TechController.store);
+routes.delete('/techs', verifyToken, TechController.delete);
 
 routes.get('/report', ReportController.show);
 
-routes.get('/users/:user_id/gridvalues', GridValuesController.index);
-routes.post('/users/:user_id/gridvalues', GridValuesController.store);
-routes.post('/users/:user_id/gridvaluesdell', GridValuesController.dell);
+routes.get('/gridvalues', verifyToken, GridValuesController.index);
+routes.post('/gridvalues', verifyToken, GridValuesController.store);
+routes.post('/gridvaluesdell', verifyToken, GridValuesController.dell);
 
-
-routes.get('/users/:user_id/gridvalues/:grid_id/managergrids', ManagerValuesController.index);
-routes.post('/users/:user_id/gridvalues/:grid_id/managergrids', ManagerValuesController.store);
-routes.post('/users/:user_id/gridvalues/:grid_id/managergrids_dell', ManagerValuesController.dell);
-routes.post('/users/:userpras/gridvalues/:namepras/managergridsapp', ManagerValuesController.createTrasitionByName);
-routes.post('/users/:userpras/managergridfindByUser', ManagerValuesController.findByUser);
+routes.get('/gridvalues/:grid_id/managergrids', verifyToken, ManagerValuesController.index);
+routes.post('/gridvalues/:grid_id/managergrids', verifyToken, ManagerValuesController.store);
+routes.post('/gridvalues/:grid_id/managergrids_dell', verifyToken, ManagerValuesController.dell);
+routes.post('/gridvalues/:namepras/managergridsapp', verifyToken, ManagerValuesController.createTrasitionByName);
+routes.post('/managergridfindByUser', verifyToken, ManagerValuesController.findByUser);
 module.exports = routes;
 
 

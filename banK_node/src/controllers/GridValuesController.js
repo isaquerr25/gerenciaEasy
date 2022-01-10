@@ -4,7 +4,7 @@ const Grids = require('../models/Grids');
 module.exports = {
     async index(req, res) {
         try {
-            const { user_id } = req.params;
+            const { userId: user_id } = req;
             const user = await User.findByPk(user_id, {
                 include: { association: 'grid_values' }
             });
@@ -17,7 +17,7 @@ module.exports = {
     },
 
     async store(req, res) {
-        const { user_id } = req.params;
+        const { userId: user_id } = req;
         const { name, date_inform, create_at } = req.body;
         const user = await User.findByPk(user_id, {
             include: { association: 'grid_values' }});
@@ -57,7 +57,7 @@ module.exports = {
     },
 
     async dell(req, res) {
-        const { user_id } = req.params;
+        const { userId: user_id } = req;
         const { id_delet } = req.body;
         console.log(id_delet)
         const _grids = await Grids.findByPk(id_delet);
