@@ -1,5 +1,6 @@
 import * as register from './registerDb.js'
 import { getGridsAndValuesDbDate } from './pathServer.js'
+import getAuthToken from './getAuthToken.js'
 console.log(register.pathIP)
 
 let myChart

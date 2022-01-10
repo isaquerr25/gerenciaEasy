@@ -1,9 +1,20 @@
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
 
 const User = require('../models/User');
-const GridValuesController = require('./GridValuesController');
-module.exports = {
-    
+const Grids = require('../models/Grids');
 
+const createAuthToken = user => {
+    const privateKey = process.env.JWT_KEY;
+    const tokenData = {
+        userId: user.id,
+    };
+
+    const token = jwt.sign(tokenData, privateKey);
+    return token;
+}
+
+module.exports = {
     async index(req, res) {
         const users = await User.findAll();
 
@@ -13,18 +24,23 @@ module.exports = {
         const users= await User.findOne({
             where:{email: req.body.email}
         });
+        console.log(users);
 
         if(!users)
         {
-            return res.json({value:'not_find'});
-        }
-        
-        if(users.password == req.body.password)
-        {
-            return res.json({value: users.id});
+            return res.status(404).send();
         }
 
-        return res.json({value:'invalid'});
+        if (await bcrypt.compare(req.body.password, users.password))
+        {
+            res.header("access-control-allow-origin", "*");
+            res.header("access-control-expose-headers", "Authorization");
+            res.header("access-control-allow-headers", "Authorization");
+            res.header('Authorization',`Bearer ${createAuthToken(users)}`);
+            return res.status(200).send();
+        }
+
+        return res.status(401).send();
     },
     async store(req, res) {
         try{
@@ -32,20 +48,31 @@ module.exports = {
 
             if(!/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/.test(password))
             {
-                throw 'type_password_invalid'
+                throw 'Your password is not strong enough'
             }
 
-            const user = await User.create({ name, email , password });
+            const salt = await bcrypt.genSalt(10);
+            const hashedPassword = await bcrypt.hash(password, salt);
+
+            const user = await User.create({ name, email, password: hashedPassword });
             console.log('-----------------------------------------------------------')
             console.log(user.dataValues.id)
             console.log('-----------------------------------------------------------')
-            GridValuesController.createInter({'userID':user.dataValues.id,'name':'All','date_inform':new Date(),'createDate':new Date()})
-            return res.json(user);
-        } 
-        catch(error)
-        {
-            console.log(error)
-            return res.json(error)
+            await Grids.create({
+                name: 'All',
+                date_inform: new Date(),
+                create_at: new Date(),
+                user_id: user.dataValues.id,
+            });
+            
+            res.header("access-control-allow-origin", "*");
+            res.header("access-control-expose-headers", "Authorization");
+            res.header("access-control-allow-headers", "Authorization");
+            res.header('Authorization', `Bearer ${createAuthToken(users)}`);
+            return res.status(200).send();
+        } catch(error) {   
+            console.log(error);
+            return res.status(400).send(error.message);
         }
     }
 };

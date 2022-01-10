@@ -1,4 +1,5 @@
 import * as register from './registerDb.js'
+import getAuthToken from './getAuthToken.js'
 console.log(register.pathIP)
 
 async function init(){
@@ -17,10 +18,12 @@ async function init(){
 
 async function getGridsAndValuesDb(){
     console.log('asdcas')
-    const fetchResponsePromise = await fetch(`${register.pathIP}/users/${register.userID}/managergridfindByUser`, {
-
+    const fetchResponsePromise = await fetch(`${register.pathIP}/managergridfindByUser`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' }
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': getAuthToken()
+        },
     })
     let val_serv = await fetchResponsePromise.json()
     

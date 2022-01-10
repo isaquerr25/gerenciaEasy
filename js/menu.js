@@ -1,4 +1,6 @@
-import  { pathIP , userID} from './registerDb.js';
+import { pathIP, userID } from './registerDb.js';
+import getAuthToken from './getAuthToken.js';
+
 function opentabe(linkend){ 
     window.open(`${linkend}.html`,'_self');
 }
@@ -96,10 +98,11 @@ window.createPrice = createPrice;
 
 
 async function getOnlyGrids() {
-    const fetchResponsePromise = await fetch(`${pathIP}/users/${userID}/gridvalues`, {
-
+    const fetchResponsePromise = await fetch(`${pathIP}/gridvalues`, {
         method: 'GET',
-        headers: { 'Content-Type': 'application/json' }
+        headers: {
+            'Authorization': getAuthToken()
+        },
     })
     let val_serv = await fetchResponsePromise.json()
     console.log(val_serv)
@@ -116,10 +119,12 @@ async function send_transition(front){
                 date_inform: front[3]
                 }
     console.log(send)
-    const fetchResponsePromise = await fetch(`${pathIP}/users/${userID}/gridvalues/${front[0]}/managergridsapp` ,{ 
-
-        method:'POST',
-        headers: {'Content-Type':'application/json'},
+    const fetchResponsePromise = await fetch(`${pathIP}}/gridvalues/${front[0]}/managergridsapp` ,{ 
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': getAuthToken()
+        },
         body: JSON.stringify(send)
 
     })
